@@ -2,7 +2,7 @@ import React from 'react'
 
 const ViewApp = () => (
   <div>
-    App index
+    App
   </div>
 );
 
