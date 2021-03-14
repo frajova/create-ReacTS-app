@@ -7,6 +7,10 @@ import {
   Redirect,
 } from 'react-router-dom';
 
+import ProtectedRoute from './layout/ProtectedRoute';
+import OnboardingRoute from './layout/OnboardingRoute';
+
+// webpack chunk names: folder becomes a word and slash becomes a dash
 const ViewApp: ExoticComponent<any> = React.lazy(() => import('./views/app'));
 const ViewError: ExoticComponent<any> = React.lazy(() => import('./views/error'));
 const ViewMain: ExoticComponent<any> = React.lazy(() => import('./views'));
@@ -17,11 +21,11 @@ const ViewOnboarding: ExoticComponent<any> = React.lazy(() => import('./views/on
 const Routes: React.FC = () => (
   <Router>
     <Switch>
-      <Route
+      <OnboardingRoute
         path="/onboarding"
         component={ViewOnboarding}
       />
-      <Route
+      <ProtectedRoute
         path="/app"
         component={ViewApp}
       />
